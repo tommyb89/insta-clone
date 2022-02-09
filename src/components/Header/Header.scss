@@ -1,0 +1,25 @@
+.header {
+  height: 3.75rem;
+  padding: 0.313rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    margin: 0;
+  }
+
+  &__img {
+    height: 2rem;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
