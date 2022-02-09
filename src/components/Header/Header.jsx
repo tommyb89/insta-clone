@@ -20,7 +20,6 @@ const Header = () => {
         <CgAddR className="header__icon" />
         <ImCompass2 className="header__icon" />
         <IoHeartOutline className="header__icon" />
-
         <img src={av} alt="Profile Avatar" className="header__avatar" />
       </div>
     </div>
