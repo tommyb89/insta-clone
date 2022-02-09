@@ -4,13 +4,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
 
   &__left {
     margin: 0;
   }
 
   &__img {
-    height: 2rem;
+    height: 2.5rem;
   }
 
   &__icons {
@@ -21,5 +22,10 @@
   &__icon {
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  &__avatar {
+    height: 1.5rem;
+    border-radius: 50%;
   }
 }
