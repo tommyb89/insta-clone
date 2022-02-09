@@ -8,10 +8,12 @@
 
   &__img {
     height: 6rem;
+    width: 6rem;
     border-radius: 50%;
     padding: 3px;
     border: 2px solid rgb(187, 132, 132);
     cursor: pointer;
+    object-fit: cover;
   }
 
   &__actions {
@@ -94,21 +96,7 @@
 
   &__stories {
     display: flex;
-  }
-
-  &__story {
-    text-align: center;
-    margin: 4px;
-    cursor: pointer;
-  }
-
-  &__story-img {
-    height: 4rem;
-    width: 4rem;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 2px;
-    border: 2px solid rgb(200, 200, 200);
+    margin: 5px 0;
   }
 
   &__stats {

@@ -1,0 +1,14 @@
+.story {
+  text-align: center;
+  margin: 4px;
+  cursor: pointer;
+
+  &__img {
+    height: 4rem;
+    width: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid rgb(200, 200, 200);
+  }
+}
