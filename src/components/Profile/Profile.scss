@@ -1,10 +1,9 @@
 .profile {
-  padding: 10px;
-
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem;
   }
 
   &__img {
@@ -12,6 +11,7 @@
     border-radius: 50%;
     padding: 3px;
     border: 2px solid rgb(187, 132, 132);
+    cursor: pointer;
   }
 
   &__actions {
@@ -72,6 +72,7 @@
 
   &__info {
     margin: 1.5rem 0.5rem 1rem;
+    padding: 0.5rem;
   }
 
   &__title {
@@ -98,6 +99,7 @@
   &__story {
     text-align: center;
     margin: 4px;
+    cursor: pointer;
   }
 
   &__story-img {
@@ -107,5 +109,15 @@
     border-radius: 50%;
     padding: 2px;
     border: 2px solid rgb(200, 200, 200);
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
   }
 }

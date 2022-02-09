@@ -1,0 +1,11 @@
+.stats {
+  text-align: center;
+
+  &__count {
+    font-weight: 500;
+  }
+
+  &__name {
+    color: #8e8e8e;
+  }
+}

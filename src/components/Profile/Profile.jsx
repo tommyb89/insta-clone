@@ -6,6 +6,7 @@ import dax from "../../assets/images/dax.jpg";
 import "./Profile.scss";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { BsChevronDown, BsPersonCheckFill } from "react-icons/bs";
+import Stats from "../Stats/Stats";
 
 const Profile = () => {
   return (
@@ -60,6 +61,13 @@ const Profile = () => {
           <img className="profile__story-img" src={dax} alt="" />
           <p className="profile__story-title">Dax</p>
         </div>
+      </div>
+
+      {/* stats */}
+      <div className="profile__stats">
+        <Stats count={14} name={"posts"} />
+        <Stats count={218} name={"followers"} />
+        <Stats count={4632} name={"following"} />
       </div>
     </div>
   );
