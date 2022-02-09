@@ -21,7 +21,6 @@
 
   &__top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
@@ -69,5 +68,44 @@
     color: rgb(54, 54, 54);
     cursor: pointer;
     margin-left: 0.5rem;
+  }
+
+  &__info {
+    margin: 1.5rem 0.5rem 1rem;
+  }
+
+  &__title {
+    color: rgb(54, 54, 54);
+  }
+
+  &__professional {
+    color: rgb(170, 170, 170);
+  }
+
+  &__description {
+  }
+
+  &__link {
+    color: #00376b;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &__stories {
+    display: flex;
+  }
+
+  &__story {
+    text-align: center;
+    margin: 4px;
+  }
+
+  &__story-img {
+    height: 4rem;
+    width: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid rgb(200, 200, 200);
   }
 }

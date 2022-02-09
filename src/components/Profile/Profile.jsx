@@ -1,5 +1,8 @@
 import React from "react";
 import av from "../../assets/images/me1.jpg";
+import dh from "../../assets/images/dh.jfif";
+import dax from "../../assets/images/dax.jpg";
+
 import "./Profile.scss";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { BsChevronDown, BsPersonCheckFill } from "react-icons/bs";
@@ -24,6 +27,38 @@ const Profile = () => {
             <BsPersonCheckFill className="profile__icon" />
             <BsChevronDown className="profile__icon" />
           </div>
+        </div>
+      </div>
+
+      {/* content */}
+      <div className="profile__info">
+        <h4 className="profile__title">John Smith</h4>
+        <p className="profile__professional">Coder</p>
+        <div className="profile__description">
+          I love... <br />
+          👨‍💻 coding
+          <br />
+          🚴‍♂️ cycling
+          <br />
+          📷 photography
+        </div>
+        <a
+          className="profile__link"
+          href="https://tommyb89.github.io/portfolio-react/"
+        >
+          tommyb89.github.io/portfolio-react
+        </a>
+      </div>
+
+      {/*stories*/}
+      <div className="profile__stories">
+        <div className="profile__story">
+          <img className="profile__story-img" src={dh} alt="" />
+          <p className="profile__story-title">Cycle</p>
+        </div>
+        <div className="profile__story">
+          <img className="profile__story-img" src={dax} alt="" />
+          <p className="profile__story-title">Dax</p>
         </div>
       </div>
     </div>
