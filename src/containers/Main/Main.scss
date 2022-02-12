@@ -1,11 +1,13 @@
-@use "./assets/sass/reset";
-
-.app {
-  background-color: #fafafa;
-  height: 100%;
+.main {
+  width: 100vw;
+  // padding: 0.5rem 1rem;
 }
 
 @media screen and (min-width: 1024px) {
+  .main {
+    margin: 0 160px;
+    padding: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

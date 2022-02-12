@@ -14,13 +14,13 @@ const Profile = (props) => {
         <div className="profile__img-container">
           <img
             className="profile__img"
-            src={user[0].avatarSrc}
+            src={user.avatarSrc}
             alt="Profile Pic"
           />
         </div>
         <div className="profile__actions">
           <div className="profile__top">
-            <h2 className="profile__name">{user[0].instagramName}</h2>
+            <h2 className="profile__name">{user.instagramName}</h2>
             <div className="profile__setting-icon">
               <BiDotsHorizontalRounded className="profile__options" />
             </div>
@@ -35,20 +35,20 @@ const Profile = (props) => {
 
       {/* content */}
       <div className="profile__info">
-        <h4 className="profile__title">{user[0].userName}</h4>
-        <p className="profile__professional">{user[0].profession}</p>
-        <div className="profile__description">{user[0].description}</div>
+        <h4 className="profile__title">{user.userName}</h4>
+        <p className="profile__professional">{user.profession}</p>
+        <div className="profile__description">{user.description}</div>
         <a
           className="profile__link"
           href="https://tommyb89.github.io/portfolio-react/"
         >
-          {user[0].website}
+          {user.website}
         </a>
       </div>
 
       {/*stories*/}
       <div className="profile__highlights">
-        <Highlights highlights={user[0].stories} />
+        <Highlights highlights={user.stories} />
       </div>
 
       {/* stats */}
