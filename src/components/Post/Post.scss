@@ -1,4 +1,9 @@
 .post {
+  background-color: white;
+  max-width: 31.25rem;
+  border: 1px solid lightgray;
+  margin-bottom: 2.813rem;
+
   &__header {
     padding: 0.875rem 0.25rem 0.875rem 1rem;
     display: flex;
@@ -21,7 +26,20 @@
 
   &__image {
     width: 100%;
-    // padding: 2rem;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  &__caption {
+    display: flex;
+    padding: 0.625rem;
+  }
+
+  &__name {
+  }
+
+  &__text {
+    margin-left: 0.5rem;
   }
 }
 
