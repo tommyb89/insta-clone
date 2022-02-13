@@ -1,16 +1,9 @@
 .avatar {
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
-  padding: 3px;
+  padding: 2px;
   cursor: pointer;
   object-fit: cover;
-
-  &--small {
-    height: 1.5rem;
-    width: 1.5rem;
-    // padding: 2px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+  border: 2px solid rgb(149, 187, 132);
 }
