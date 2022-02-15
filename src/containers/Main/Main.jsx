@@ -9,7 +9,6 @@ const Main = () => {
   return (
     <main className="main">
       <Profile user={userData} />
-      <Login />
       <PostContainer />
     </main>
   );

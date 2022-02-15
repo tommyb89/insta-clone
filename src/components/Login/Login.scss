@@ -4,7 +4,10 @@
   padding: 2rem;
   max-width: 350px;
   flex-grow: 1;
-  width: 100%;
+  position: absolute;
+  left: 2.5rem;
+  top: 5rem;
+  background-color: #fff;
 
   &__logo {
     height: 4rem;
@@ -74,7 +77,22 @@
     flex-direction: column;
   }
 
+  &__username {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+  }
+
   &__email {
+    margin-top: 2px;
     display: flex;
     align-items: center;
     background: #fafafa;
@@ -96,23 +114,6 @@
     min-width: 0;
     padding: 0;
     position: relative;
-  }
-
-  &__span {
-    color: #8e8e8e;
-    font-size: 12px;
-    height: 36px;
-    left: 8px;
-    line-height: 36px;
-    overflow: hidden;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    text-overflow: ellipsis;
-    transform-origin: left;
-    transition: transform ease-out 0.1s;
-    user-select: none;
-    white-space: nowrap;
   }
 
   &__input {
