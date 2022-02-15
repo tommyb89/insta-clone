@@ -1,0 +1,189 @@
+.login {
+  text-align: center;
+  border: 1px solid grey;
+  padding: 2rem;
+  max-width: 350px;
+  flex-grow: 1;
+  width: 100%;
+
+  &__logo {
+    height: 4rem;
+  }
+
+  &__form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__fb {
+    margin-top: 0.5rem;
+  }
+
+  &__fbbtn {
+    background-color: #0095f6;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    padding: 5px 30px;
+    font-weight: 600;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: auto;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &__fbicon {
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    top: 2px;
+  }
+
+  &__divider {
+    margin: 22px 0;
+    display: flex;
+    width: 100%;
+  }
+
+  &__line {
+    background-color: #dbdbdb;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 1px;
+    position: relative;
+    top: 0.45em;
+    width: 100%;
+  }
+
+  &__or {
+    color: #8e8e8e;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+    text-transform: uppercase;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__label {
+    display: flex;
+    flex: 1 0 0;
+    height: 36px;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &__span {
+    color: #8e8e8e;
+    font-size: 12px;
+    height: 36px;
+    left: 8px;
+    line-height: 36px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    transform-origin: left;
+    transition: transform ease-out 0.1s;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__input {
+    background: #fafafa;
+    border: 0;
+    flex: 1 0 auto;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+  }
+
+  &__password {
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__loginBtn {
+    margin-top: 1rem;
+  }
+
+  &__btn {
+    background-color: rgba(0, 149, 246, 0.3);
+    opacity: 1;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: inherit;
+    width: 100%;
+
+    &:visited {
+      background-color: #0095f6;
+    }
+  }
+
+  &__signup {
+    margin-top: 1rem;
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__signuplink {
+    cursor: pointer;
+  }
+
+  &__signupText {
+    margin-left: 3px;
+    color: #0095f6;
+    display: inline !important;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+}
