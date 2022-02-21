@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./Login.scss";
+import React, { useState, useEffect, useRef } from "react";
+import "./Signup.scss";
 import insta from "../../assets/images/instagram.svg";
 import { FaFacebookSquare } from "react-icons/fa";
 import { auth } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -13,45 +16,63 @@ const Login = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [user, setUser] = useState(null);
 
+  const usernameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+
   const signUp = async (e) => {
     e.preventDefault();
 
     try {
-      const user = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         registerEmail,
         registerPassword
-      );
-      console.log(user);
+      ).then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
+      });
     } catch (error) {
-      alert("Oops.. some fields are wrong!");
+      alert(error.message);
     }
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // user has logged in...
-
         console.log(authUser);
         setUser(authUser);
-
-        if (authUser.displayName) {
-          // dont update username
-        } else {
-          return authUser.updateProfile({
-            displayName: username,
-          });
-        }
       } else {
         // user has logged out...
         setUser(null);
       }
     });
-  }, []);
+
+    return () => {
+      // perform clean up actions
+      unsubscribe();
+    };
+  }, [user, username]);
 
   const login = async (e) => {
     e.preventDefault();
+
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      ).then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
+      });
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const logOut = async (e) => {
@@ -63,34 +84,34 @@ const Login = () => {
       {/* logo */}
       <img src={insta} alt="logo" className="login__logo" />
 
+      {/* facebook btn */}
+      <div className="login__fb">
+        <button className="login__fbbtn">
+          <span>
+            <FaFacebookSquare className="login__fbicon" />
+          </span>
+          Continue Using Facebook
+        </button>
+      </div>
+
+      {/* divider -- OR -- */}
+      <div className="login__divider">
+        <div className="login__line"></div>
+        <div className="login__or">or</div>
+        <div className="login__line"></div>
+      </div>
+
+      {/* login form */}
       <form className="login__form">
-        {/* facebook btn */}
-        <div className="login__fb">
-          <button className="login__fbbtn">
-            <span>
-              <FaFacebookSquare className="login__fbicon" />
-            </span>
-            Continue Using Facebook
-          </button>
-        </div>
-
-        {/* divider -- OR -- */}
-        <div className="login__divider">
-          <div className="login__line"></div>
-          <div className="login__or">or</div>
-          <div className="login__line"></div>
-        </div>
-
-        {/* login form */}
         <div className="login__fields">
           <div className="login__username">
             <label htmlFor="" className="login__label">
               <input
                 type="text"
-                value={user}
                 onChange={(e) => setUser(e.target.value)}
                 className="login__input"
                 placeholder="Username"
+                ref={usernameRef}
               />
             </label>
           </div>
@@ -98,10 +119,10 @@ const Login = () => {
             <label htmlFor="" className="login__label">
               <input
                 type="text"
-                value={registerEmail}
                 onChange={(e) => setRegisterEmail(e.target.value)}
                 className="login__input"
                 placeholder="Email"
+                ref={emailRef}
               />
             </label>
           </div>
@@ -109,10 +130,21 @@ const Login = () => {
             <label htmlFor="" className="login__label">
               <input
                 type="password"
-                value={registerPassword}
                 onChange={(e) => setRegisterPassword(e.target.value)}
                 className="login__input"
                 placeholder="Password"
+                ref={passwordRef}
+              />
+            </label>
+          </div>
+          <div className="login__password">
+            <label htmlFor="" className="login__label">
+              <input
+                type="password"
+                onChange={(e) => setRegisterPassword(e.target.value)}
+                className="login__input"
+                placeholder="Password"
+                ref={passwordConfirmRef}
               />
             </label>
           </div>
@@ -123,14 +155,13 @@ const Login = () => {
             Sign Up
           </button>
         </div>
-
-        <p className="login__signup">
-          Don't have account?
-          <a className="login__link" href="">
-            <span className="login__signupText">Log in</span>
-          </a>
-        </p>
       </form>
+      <p className="login__signup">
+        Don't have account?
+        <a className="login__link" href="">
+          <span className="login__signupText">Log in</span>
+        </a>
+      </p>
     </article>
   );
 };

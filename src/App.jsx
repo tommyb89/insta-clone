@@ -1,14 +1,20 @@
 import "./App.scss";
-import Header from "./components/Header/Header";
+import Signup from "./components/Signup/Signup";
 import Main from "./containers/Main/Main";
-import { userData } from "./data/data";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="App">
-      <Header user={userData} />
-      <Main />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Signup />} />
+          {/* <Route path="/register" element={<SignUp />} /> */}
+          {/* <Route exact path="/reset" element={<Reset />} /> */}
+          <Route exact path="/dashboard" element={<Main />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

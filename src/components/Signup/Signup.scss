@@ -36,6 +36,11 @@
     width: auto;
     cursor: pointer;
     width: 100%;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #0075c3;
+    }
   }
 
   &__fbicon {
@@ -163,8 +168,8 @@
     text-transform: inherit;
     width: 100%;
 
-    &:visited {
-      background-color: #0095f6;
+    &:hover {
+      background-color: rgba(0, 148, 246, 0.459);
     }
   }
 

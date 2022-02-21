@@ -3,7 +3,6 @@ import "./Main.scss";
 import PostContainer from "../PostContainer/PostContainer";
 import Profile from "../../components/Profile/Profile";
 import { userData } from "../../data/data";
-import Login from "../../components/Login/Login";
 
 const Main = () => {
   return (
